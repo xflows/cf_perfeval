@@ -12,14 +12,14 @@ def perfeval_classification_statistics(input_dict):
                 y_pred.extend(fold_labels[1])
             labels = [y_true, y_pred]
         except:
-            raise Exception('Expected true and predicted labels for each fold, but failed.' + 
-                            'If you wish to provide labels for each fold separately it should look like: ' + 
+            raise Exception('Expected true and predicted labels for each fold, but failed.' +
+                            'If you wish to provide labels for each fold separately it should look like: ' +
                             '[[y_true_1, y_predicted_1], [y_true_2, y_predicted_2], ...]')
     if len(labels) != 2:
         raise Exception('Wrong input structure, this widget accepts labels in the form: [y_true, y_pred]')
-    
+
     y_true, y_pred = labels
-    
+
     classes = set()
     classes.update(y_true + y_pred)
     classes = sorted(list(classes))
@@ -43,7 +43,7 @@ def perfeval_classification_statistics(input_dict):
         auc = metrics.roc_auc_score(y_true, y_pred)
     else:
         auc = 'undefined for multiple classes'
-    return {'accuracy': accuracy, 'precision': precision, 'recall': recall, 
+    return {'accuracy': accuracy, 'precision': precision, 'recall': recall,
             'f1': f1, 'auc': auc, 'confusion_matrix': confusion_matrix}
 
 
@@ -75,8 +75,10 @@ def perfeval_noise_detection(input_dict):
 def perfeval_bar_chart(input_dict):
     return {}
 
+
 def perfeval_to_table(input_dict):
     return {}
+
 
 def perfeval_batch(input_dict):
     alg_perfs = input_dict['perfs']
