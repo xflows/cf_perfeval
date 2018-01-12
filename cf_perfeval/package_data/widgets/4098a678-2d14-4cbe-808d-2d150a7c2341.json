@@ -13,7 +13,7 @@
       "description": "VIPER: performance evaluation in the Precision-Recall (PR) space. An interactive widget showing the PR plot , which can also be saved as an image or printed.",
       "static_image": "viper600-60_1.png",
       "action": "perfeval_pr_space",
-      "visualization_view": "pr_space_view", 
+      "visualization_view": "perfeval_pr_space_view",
       "streaming_visualization_view": "", 
       "post_interact_action": "", 
       "wsdl_method": "", 
